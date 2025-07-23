@@ -48,3 +48,51 @@ EOF
 # 2.5 NSS
 sudo sed -i 's/^\(passwd:\s*compat\).*/\1 winbind/' /etc/nsswitch.conf
 sudo sed -i 's/^\(group:\s*compat\).*/\1 winbind/'  /etc/nsswitch.conf
+
+---
+
+## 3. PAM & Domain Join
+
+```bash
+# 3.1 Enable domain auth + home-dir creation
+sudo pam-auth-update --enable mkhomedir
+
+# 3.2 Restart Winbind, join domain
+sudo systemctl restart winbind
+sudo net ads join -U Administrator      # enter @Deeboodah1!
+```
+
+---
+
+## 4. Verify & Troubleshoot
+
+```bash
+wbinfo -u               # should list CORP+janed
+getent passwd CORP+janed  # should show a passwd entry
+su - CORP+janed           # should drop you into her shell
+```
+
+**Common issues & fixes**
+
+* **No DNS / Kerberos lookup** → ensure `/etc/resolv.conf` points at the DC and is immutable.
+* **`getent` returns nothing** → manually map home & shell:
+
+  ```bash
+  sudo mkdir -p /home/CORP/janed
+  sudo useradd -M -d /home/CORP/janed -s /bin/bash CORP+janed
+  ```
+* **Account locked in AD** → unlock in AD Users & Computers; reset password.
+
+---
+
+## 5. Snapshot & Next
+
+1. Take a VirtualBox snapshot: **Ubuntu‑AD‑Integrated**
+2. Grant sudo if desired:
+
+   ```bash
+   sudo usermod -aG sudo CORP+janed
+   ```
+
+```
+```
