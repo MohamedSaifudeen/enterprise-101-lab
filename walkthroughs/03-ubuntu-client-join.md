@@ -58,7 +58,7 @@ sudo pam-auth-update --enable mkhomedir
 
 # 3.2 Restart Winbind, join domain
 sudo systemctl restart winbind
-sudo net ads join -U Administrator      # enter @Deeboodah1!
+sudo net ads join -U Administrator      # enter Deeboodah1!
 ```
 
 ---
