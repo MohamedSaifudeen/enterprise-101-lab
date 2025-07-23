@@ -63,7 +63,7 @@ sudo net ads join -U Administrator      # enter @Deeboodah1!
 ```
 
 ---
-
+```
 ## 4. Verify & Troubleshoot
 
 ```bash
@@ -71,7 +71,7 @@ wbinfo -u               # should list CORP+janed
 getent passwd CORP+janed  # should show a passwd entry
 su - CORP+janed           # should drop you into her shell
 ```
-
+```
 **Common issues & fixes**
 
 * **No DNS / Kerberos lookup** → ensure `/etc/resolv.conf` points at the DC and is immutable.
@@ -80,11 +80,10 @@ su - CORP+janed           # should drop you into her shell
   ```bash
   sudo mkdir -p /home/CORP/janed
   sudo useradd -M -d /home/CORP/janed -s /bin/bash CORP+janed
-  ```
+
 * **Account locked in AD** → unlock in AD Users & Computers; reset password.
 
 ---
-
 ## 5. Snapshot & Next
 
 1. Take a VirtualBox snapshot: **Ubuntu‑AD‑Integrated**
@@ -93,6 +92,5 @@ su - CORP+janed           # should drop you into her shell
    ```bash
    sudo usermod -aG sudo CORP+janed
    ```
-
 ```
 ```
