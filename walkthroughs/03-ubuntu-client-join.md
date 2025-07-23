@@ -62,10 +62,10 @@ sudo net ads join -U Administrator      # enter @Deeboodah1!
 ```
 
 ---
-```
+```bash
 ## 4. Verify & Troubleshoot
 
-```bash
+
 wbinfo -u               # should list CORP+janed
 getent passwd CORP+janed  # should show a passwd entry
 su - CORP+janed           # should drop you into her shell
