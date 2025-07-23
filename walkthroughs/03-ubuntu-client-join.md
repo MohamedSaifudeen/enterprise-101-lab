@@ -53,7 +53,6 @@ sudo sed -i 's/^\(group:\s*compat\).*/\1 winbind/'  /etc/nsswitch.conf
 
 ## 3. PAM & Domain Join
 
-```bash
 # 3.1 Enable domain auth + home-dir creation
 sudo pam-auth-update --enable mkhomedir
 
