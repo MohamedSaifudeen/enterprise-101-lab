@@ -1,4 +1,4 @@
-# 🐧 03 – Ubuntu Desktop AD Join (Samba + Winbind)
+# 03 – Ubuntu Desktop AD Join (Samba + Winbind)
 
 **Objective**  
 Join Ubuntu 22.04 (`project-x-linux-client`) to the AD domain `corp.project-x-dc.com` (10.0.0.5) and enable domain‑user logins.
