@@ -69,8 +69,8 @@ sudo net ads join -U Administrator      # enter @Deeboodah1!
 wbinfo -u               # should list CORP+janed
 getent passwd CORP+janed  # should show a passwd entry
 su - CORP+janed           # should drop you into her shell
-```
-```
+
+
 **Common issues & fixes**
 
 * **No DNS / Kerberos lookup** → ensure `/etc/resolv.conf` points at the DC and is immutable.
@@ -90,6 +90,6 @@ su - CORP+janed           # should drop you into her shell
 
    ```bash
    sudo usermod -aG sudo CORP+janed
-   ```
+
 ```
-```
+
