@@ -15,4 +15,3 @@ Full Active Directory enterprise lab walkthrough with real-world issues, fixes, 
 | 01     | Windows Server 2025 as Domain Controller             | [Read](walkthroughs/01-domain-controller-setup.md)     |
 | 02     | Windows Client Domain Join                           | [Read](walkthroughs/02-windows-client-join.md)         |
 | 03     | **Ubuntu Desktop AD Join (Samba + Winbind)**         | [Read](walkthroughs/03-ubuntu-client-join.md)          |
-| 04     | Ubuntu Dedicated Server Setup + PAM/Sudo Troubleshooting | [Read](walkthroughs/04-ubuntu-server-setup.md)      |
