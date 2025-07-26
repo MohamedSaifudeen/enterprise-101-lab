@@ -59,10 +59,7 @@ sudo pam-auth-update --enable mkhomedir
 # 3.2 Restart Winbind, join domain
 sudo systemctl restart winbind
 sudo net ads join -U Administrator      # enter Deeboodah1!
-```
 
----
-```bash
 ## 4. Verify & Troubleshoot
 
 
@@ -76,7 +73,7 @@ su - CORP+janed           # should drop you into her shell
 * **No DNS / Kerberos lookup** → ensure `/etc/resolv.conf` points at the DC and is immutable.
 * **`getent` returns nothing** → manually map home & shell:
 
-  ```bash
+  
   sudo mkdir -p /home/CORP/janed
   sudo useradd -M -d /home/CORP/janed -s /bin/bash CORP+janed
 
@@ -88,7 +85,7 @@ su - CORP+janed           # should drop you into her shell
 1. Take a VirtualBox snapshot: **Ubuntu‑AD‑Integrated**
 2. Grant sudo if desired:
 
-   ```bash
+   
    sudo usermod -aG sudo CORP+janed
 
 ```
